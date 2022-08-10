@@ -1,0 +1,3 @@
+[submodule "GE_Test/3p/spdlog"]
+	path = GE_Test/3p/spdlog
+	url = https://github.com/gabime/spdlog
