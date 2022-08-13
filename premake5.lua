@@ -4,6 +4,10 @@ workspace "GE_Test"
   configurations { "Debug", "Release", "Dist" }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+IncludeDir = {}
+IncludeDir["GLFWinc"] = "$(SolutionDir)%{prj.name}/3p/glfw/include"
+IncludeDir["GLFWsrc"] = "$(SolutionDir)%{prj.name}/3p/glfw/src"
+IncludeDir["spdlog"] = "$(SolutionDir)%{prj.name}/3p/spdlog/include"
 
 project "GE_Test"
   location "GE_Test"
@@ -13,14 +17,23 @@ project "GE_Test"
   targetdir ("bin/".. outputdir .. "/%{prj.name}")
   objdir ("bin-int/".. outputdir .. "/%{prj.name}")
 
+  pchheader "getpch.h"
+  pchsource "%{prj.name}/src/getpch.cpp"
+
   files
   {
     "%{prj.name}/src/**.h", "%{prj.name}/src/**.cpp"
   }
-
+ -- "$(SolutionDir)%{prj.name}/3p/spdlog/include"
   includedirs
   {
-    "$(SolutionDir)%{prj.name}/3p/spdlog/include"
+    "%{prj.name}/src", "%{IncludeDir.GLFWinc}", 
+    "%{IncludeDir.spdlog}", "%{IncludeDir.GLFWsrc}"
+  }
+
+  links
+  {
+    "opengl32.lib"
   }
 
   filter "system:windows"

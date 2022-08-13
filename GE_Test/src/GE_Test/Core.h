@@ -9,3 +9,5 @@
 #else
 	#error GE_TEST is only for Windows currently, because I am an idiot!
 #endif // DEBUG
+
+#define BIT(x) (1 << x)

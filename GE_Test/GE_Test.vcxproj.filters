@@ -4,6 +4,9 @@
     <Filter Include="GE_Test">
       <UniqueIdentifier>{F04E0105-5C2E-80A0-6546-0B77D1A4E601}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GE_Test\Events">
+      <UniqueIdentifier>{D4CCEA91-C09A-DE97-A92E-4FBE959BBAFC}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GE_Test.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\GE_Test\EntryPoint.h">
       <Filter>GE_Test</Filter>
     </ClInclude>
+    <ClInclude Include="src\GE_Test\Events\ApplicationEvent.h">
+      <Filter>GE_Test\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GE_Test\Events\Event.h">
+      <Filter>GE_Test\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GE_Test\Events\KeyEvent.h">
+      <Filter>GE_Test\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GE_Test\Events\MouseEvent.h">
+      <Filter>GE_Test\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\GE_Test\Log.h">
       <Filter>GE_Test</Filter>
     </ClInclude>
+    <ClInclude Include="src\getpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GE_Test\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\GE_Test\Log.cpp">
       <Filter>GE_Test</Filter>
     </ClCompile>
+    <ClCompile Include="src\getpch.cpp" />
   </ItemGroup>
 </Project>
