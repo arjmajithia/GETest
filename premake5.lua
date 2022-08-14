@@ -5,9 +5,9 @@ workspace "GE_Test"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
-IncludeDir["GLFWinc"] = "$(SolutionDir)%{prj.name}/3p/glfw/include"
-IncludeDir["GLFWsrc"] = "$(SolutionDir)%{prj.name}/3p/glfw/src"
-IncludeDir["spdlog"] = "$(SolutionDir)%{prj.name}/3p/spdlog/include"
+IncludeDir["GLFW"] = "GE_Test/3p/glfw/include"
+-- IncludeDir["GLFWsrc"] = "$(SolutionDir)%{prj.name}/3p/glfw/src"
+include "GE_Test/3p/glfw"
 
 project "GE_Test"
   location "GE_Test"
@@ -24,15 +24,17 @@ project "GE_Test"
   {
     "%{prj.name}/src/**.h", "%{prj.name}/src/**.cpp"
   }
+
  -- "$(SolutionDir)%{prj.name}/3p/spdlog/include"
   includedirs
   {
-    "%{prj.name}/src", "%{IncludeDir.GLFWinc}", 
-    "%{IncludeDir.spdlog}", "%{IncludeDir.GLFWsrc}"
+    "%{prj.name}/src", "%{IncludeDir.GLFW}", 
+    "$(SolutionDir)%{prj.name}/3p/spdlog/include"
   }
 
   links
   {
+    "glfw",
     "opengl32.lib"
   }
 

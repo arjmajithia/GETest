@@ -2,8 +2,8 @@
 
 #include "GE_Test/Core.h"
 
-//#include <string>
-//#include <functional>
+#include <string>
+#include <functional>
 
 namespace GE_Test {
 

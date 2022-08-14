@@ -6,6 +6,7 @@
 namespace GE_Test {
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 	Application::~Application()
 	{
@@ -13,15 +14,9 @@ namespace GE_Test {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1200, 720);
-		if (e.IsInCategory(EventCategoryApplication))
+		while (m_Running)
 		{
-			GETEST_TRACE(e);
+			m_Window->OnUpdate();
 		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			GETEST_TRACE(e);
-		}
-		while (true);
 	}
 }

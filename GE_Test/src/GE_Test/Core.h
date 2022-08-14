@@ -10,4 +10,13 @@
 	#error GE_TEST is only for Windows currently, because I am an idiot!
 #endif // DEBUG
 
+#ifdef GETEST_ENABLE_ASSERTS
+	#define GETEST_ASSERT(x, ...) {if(!(x)) {GETEST_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define GETEST_CORE_ASSERT(x, ...) {if(!(x)) {GETEST_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define GETEST_ASSERT(x, ...)
+	#define GETEST_CORE_ASSERT(x, ...)
+#endif // GETEST_ENABLE_ASSERTS
+
+
 #define BIT(x) (1 << x)
