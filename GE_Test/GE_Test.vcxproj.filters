@@ -37,6 +37,12 @@
     <ClInclude Include="src\GE_Test\Events\MouseEvent.h">
       <Filter>GE_Test\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\GE_Test\Layer.h">
+      <Filter>GE_Test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GE_Test\LayerStack.h">
+      <Filter>GE_Test</Filter>
+    </ClInclude>
     <ClInclude Include="src\GE_Test\Log.h">
       <Filter>GE_Test</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\GE_Test\Application.cpp">
+      <Filter>GE_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GE_Test\Layer.cpp">
+      <Filter>GE_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GE_Test\LayerStack.cpp">
       <Filter>GE_Test</Filter>
     </ClCompile>
     <ClCompile Include="src\GE_Test\Log.cpp">
