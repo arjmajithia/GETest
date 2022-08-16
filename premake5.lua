@@ -6,8 +6,10 @@ workspace "GE_Test"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "GE_Test/3p/glfw/include"
+IncludeDir["glad"] = "GE_Test/3p/glad/include"
 -- IncludeDir["GLFWsrc"] = "$(SolutionDir)%{prj.name}/3p/glfw/src"
 include "GE_Test/3p/glfw"
+include "GE_Test/3p/glad"
 
 project "GE_Test"
   location "GE_Test"
@@ -28,14 +30,14 @@ project "GE_Test"
  -- "$(SolutionDir)%{prj.name}/3p/spdlog/include"
   includedirs
   {
-    "%{prj.name}/src", "%{IncludeDir.GLFW}", 
+    "%{prj.name}/src", "%{IncludeDir.GLFW}", "%{IncludeDir.glad}", 
     "$(SolutionDir)%{prj.name}/3p/spdlog/include"
   }
 
   links
   {
     "glfw",
-    "opengl32.lib"
+    "opengl32.lib", "glad"
   }
 
   filter "system:windows"
@@ -44,7 +46,7 @@ project "GE_Test"
 
     defines 
     {
-        "GETEST_PLATFORM_WINDOWS", "GETEST_BUILD_DLL", "_WINDLL"
+        "GETEST_PLATFORM_WINDOWS", "GETEST_BUILD_DLL", "_WINDLL", "GLFW_INCLUDE_NONE"
     }
 
     postbuildcommands

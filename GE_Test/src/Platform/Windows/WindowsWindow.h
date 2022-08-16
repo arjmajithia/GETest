@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GE_Test/Window.h"
-#include "GLFW/glfw3.h"
+#include <GLFW/glfw3.h>
 
 namespace GE_Test {
 

@@ -5,6 +5,8 @@
 #include "GE_Test/Events/KeyEvent.h"
 #include "GE_Test/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace GE_Test {
 	
 	static bool s_GLFWInitialized = false;
@@ -47,6 +49,8 @@ namespace GE_Test {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		GETEST_CORE_ASSERT(status, "Failed to initialize glad.")
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

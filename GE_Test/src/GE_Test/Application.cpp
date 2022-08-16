@@ -1,5 +1,7 @@
 #include "getpch.h"
 #include "Application.h"
+#include "Log.h"
+#include <glad/glad.h>
 
 namespace GE_Test {
 
