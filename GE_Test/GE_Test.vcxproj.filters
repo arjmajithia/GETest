@@ -7,8 +7,14 @@
     <Filter Include="GE_Test\Events">
       <UniqueIdentifier>{D4CCEA91-C09A-DE97-A92E-4FBE959BBAFC}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GE_Test\imgui">
+      <UniqueIdentifier>{5AD028E0-C690-A416-8FCB-ED93FB4AE9F2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -49,6 +55,15 @@
     <ClInclude Include="src\GE_Test\Window.h">
       <Filter>GE_Test</Filter>
     </ClInclude>
+    <ClInclude Include="src\GE_Test\imgui\imguiLayer.h">
+      <Filter>GE_Test\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\imguiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_glfw.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -66,6 +81,15 @@
     </ClCompile>
     <ClCompile Include="src\GE_Test\Log.cpp">
       <Filter>GE_Test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GE_Test\imgui\imguiLayer.cpp">
+      <Filter>GE_Test\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\imguiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_glfw.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>

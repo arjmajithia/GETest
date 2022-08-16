@@ -7,9 +7,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "GE_Test/3p/glfw/include"
 IncludeDir["glad"] = "GE_Test/3p/glad/include"
+IncludeDir["imgui"] = "GE_Test/3p/imgui"
 -- IncludeDir["GLFWsrc"] = "$(SolutionDir)%{prj.name}/3p/glfw/src"
 include "GE_Test/3p/glfw"
 include "GE_Test/3p/glad"
+include "GE_Test/3p/imgui"
 
 project "GE_Test"
   location "GE_Test"
@@ -31,13 +33,13 @@ project "GE_Test"
   includedirs
   {
     "%{prj.name}/src", "%{IncludeDir.GLFW}", "%{IncludeDir.glad}", 
-    "$(SolutionDir)%{prj.name}/3p/spdlog/include"
+    "$(SolutionDir)%{prj.name}/3p/spdlog/include", "%{IncludeDir.imgui}"
   }
 
   links
   {
     "glfw",
-    "opengl32.lib", "glad"
+    "opengl32.lib", "glad", "imgui"
   }
 
   filter "system:windows"

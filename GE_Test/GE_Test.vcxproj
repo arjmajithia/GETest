@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>getpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GETEST_PLATFORM_WINDOWS;GETEST_BUILD_DLL;_WINDLL;GLFW_INCLUDE_NONE;GETEST_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;3p\glfw\include;3p\glad\include;$(SolutionDir)GE_Test\3p\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;3p\glfw\include;3p\glad\include;$(SolutionDir)GE_Test\3p\spdlog\include;3p\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -102,7 +102,7 @@
       <PrecompiledHeaderFile>getpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GETEST_PLATFORM_WINDOWS;GETEST_BUILD_DLL;_WINDLL;GLFW_INCLUDE_NONE;GETEST_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;3p\glfw\include;3p\glad\include;$(SolutionDir)GE_Test\3p\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;3p\glfw\include;3p\glad\include;$(SolutionDir)GE_Test\3p\spdlog\include;3p\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -128,7 +128,7 @@
       <PrecompiledHeaderFile>getpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GETEST_PLATFORM_WINDOWS;GETEST_BUILD_DLL;_WINDLL;GLFW_INCLUDE_NONE;GETEST_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;3p\glfw\include;3p\glad\include;$(SolutionDir)GE_Test\3p\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;3p\glfw\include;3p\glad\include;$(SolutionDir)GE_Test\3p\spdlog\include;3p\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -161,6 +161,9 @@
     <ClInclude Include="src\GE_Test\LayerStack.h" />
     <ClInclude Include="src\GE_Test\Log.h" />
     <ClInclude Include="src\GE_Test\Window.h" />
+    <ClInclude Include="src\GE_Test\imgui\imguiLayer.h" />
+    <ClInclude Include="src\Platform\OpenGL\imguiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_glfw.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\getpch.h" />
   </ItemGroup>
@@ -169,6 +172,9 @@
     <ClCompile Include="src\GE_Test\Layer.cpp" />
     <ClCompile Include="src\GE_Test\LayerStack.cpp" />
     <ClCompile Include="src\GE_Test\Log.cpp" />
+    <ClCompile Include="src\GE_Test\imgui\imguiLayer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imguiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\getpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
@@ -180,6 +186,9 @@
     </ProjectReference>
     <ProjectReference Include="3p\glad\glad.vcxproj">
       <Project>{DD62977C-C999-980D-7286-7E105E9C140F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="3p\imgui\imgui.vcxproj">
+      <Project>{0098A80F-6CAC-D0C0-352E-7420A101CDF1}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

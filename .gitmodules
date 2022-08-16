@@ -1,3 +1,6 @@
 [submodule "GE_Test/3p/spdlog"]
 	path = GE_Test/3p/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "GE_Test/3p/imgui"]
+	path = GE_Test/3p/imgui
+	url = https://github.com/ocornut/imgui.git
