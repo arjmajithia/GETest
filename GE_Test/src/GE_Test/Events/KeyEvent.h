@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace GE_Test {
 	
 	class GETEST_API KeyEvent : public Event

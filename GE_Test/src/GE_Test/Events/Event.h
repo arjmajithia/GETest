@@ -4,6 +4,7 @@
 
 #include <string>
 #include <functional>
+#include <sstream>
 
 namespace GE_Test {
 
