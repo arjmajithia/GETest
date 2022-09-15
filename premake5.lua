@@ -17,6 +17,7 @@ project "GE_Test"
   location "GE_Test"
   kind "SharedLib"
   language "C++"
+  staticruntime "off"
 
   targetdir ("bin/".. outputdir .. "/%{prj.name}")
   objdir ("bin-int/".. outputdir .. "/%{prj.name}")
@@ -43,7 +44,6 @@ project "GE_Test"
   }
 
   filter "system:windows"
-    staticruntime "On"
     systemversion "latest"
 
     defines 
@@ -74,6 +74,7 @@ project "GE_Test"
 project "Sandbox"
   location "Sandbox"
   kind "ConsoleApp"
+  staticruntime "off"
   language "C++"
 
   targetdir ("bin/".. outputdir .. "/%{prj.name}")
